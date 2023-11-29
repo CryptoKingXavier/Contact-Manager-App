@@ -1,0 +1,143 @@
+body {
+    scroll-behavior: smooth;
+    font-family: system-ui, sans-serif;
+    text-align: center;
+    background-color: beige;
+}
+
+a {
+    text-decoration: none;
+    color: brown;
+    font-size: 18px;
+    font-style: italic;
+    cursor: crosshair;
+    font-weight: bold;
+}
+
+button {
+    border: none;
+    color: crimson;
+    background-color: snow;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.container {
+    box-sizing: border-box;
+    border-radius: 15px;
+    box-shadow: 3px 4px 10px 3px lightgray;
+    margin: auto;
+    min-width: 50vw;
+    max-width: fit-content;
+    padding: 10px;
+    margin-top: 5rem;
+}
+
+h2 {
+    font-size: 50px;
+    color: crimson;
+}
+
+#home, #view_contact, #add_contact, #delete_contact, #update_contact {
+    border: .5px solid teal;
+    border-radius: 15px;
+    background-color: snow;
+    padding: 10px;
+    padding-bottom: 15px;
+}
+
+#add:hover, #delete:hover, #update:hover {
+    transform: scale(1.5);
+}
+
+#update_contact form {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 1rem;
+    display: grid;
+}
+
+#update_contact form input {
+    width: 20vw;
+    margin: auto;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#update_contact form button {
+    margin-top: 5px;
+}
+
+
+#add, #delete, #update {
+    width: fit-content;
+    padding: 3px;
+    margin: auto;
+    text-align: center;
+    font-style: normal;
+    color: lightgray;
+}
+
+#view_contact, #no-contact {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bolder;
+    font-style: italic;
+    color: teal;
+}
+
+#no-contact {
+    padding: 5px;
+}
+
+input[type="text"]::placeholder {
+    text-align: center;
+    color: teal;
+    font-style: italic;
+    padding: 3px;
+}
+
+input[type="text"] {
+    text-align: center;
+    color: maroon;
+    font-size: 20px;
+    padding: 3px;
+    border-radius: 3px;
+    border: .3px solid brown;
+    margin-right: 10px;
+    font-style: italic;
+}
+
+@media screen and (max-width: 1000px) {
+    #add:hover, #delete:hover, #update:hover {
+        transform: scale(1);
+    }
+
+    #add, #delete, #update {
+        font-size: small;
+    }
+
+    .profile-pic {
+        display: none;
+    }
+
+    #add_contact form, #delete_contact form, #update_contact form {
+        display: grid;
+        padding: 10px;
+    }
+
+    #add_contact form input, #delete_contact form input {
+        margin: 5px;
+    }
+
+    #update_contact form input {
+        margin: auto;
+        margin-bottom: 10px;
+        width: 55vw;
+    }
+
+    .container {
+        margin-top: 5rem;
+    }
+ 
+}

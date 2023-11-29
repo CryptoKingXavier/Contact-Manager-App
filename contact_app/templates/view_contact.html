@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <section id="view_contact">
+        <h2>Contact Finder 🕵️</h2>
+        {% if (contact is defined) and contact %}
+            <p>{{ contact[0] }} {{ contact[1] }}</p>
+        {% else %}
+            <p>Contact Not Found!</p>
+        {% endif %}
+        <a href="{{ url_for('main.index') }}">⬅️</a>
+    </section>
+{% endblock %}

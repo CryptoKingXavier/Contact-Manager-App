@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <section id="delete_contact">
+        <h2>Delete Contact</h2>
+        <form action="{{ url_for('main.remove_contact') }}" method="post">
+            <input type="text" name="contact_name" placeholder="Contact Name" required autocapitalize="words">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button type="submit">🗑️</button>
+            <a href="{{ url_for('main.contacts') }}">⬅️</a>
+        </form>
+    </section>
+{% endblock %}

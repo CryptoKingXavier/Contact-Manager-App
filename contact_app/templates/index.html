@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <section id="home">
+        <h2>Contacts Hub</h2>
+        <form action="{{ url_for('main.contact') }}" method="post">
+            <input type="text" name="contact_name" placeholder="Lookup Contact" required autocapitalize="words">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button type="submit">🕵️</button>
+        </form>
+        <a href="{{ url_for('main.contacts') }}">View Contacts</a>
+    </section>
+{% endblock %}

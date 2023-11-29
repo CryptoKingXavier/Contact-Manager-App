@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/table-style.css' ) }}">
+<script defer src="{{ url_for('static', filename='js/table-script.js' ) }}"></script>
+<style>
+    .container {
+        width: fit-content;
+        padding: 10px;
+        margin-top: 1.5rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+{% if (contacts is defined) and contacts %}
+<main class="table">
+    <section class="table__header">
+        <h1>Contacts</h1>
+        <a id="add">➕</a>
+        <a id="delete">🗑️</a>
+        <a id="update">♻️</a>
+        <div class="input-group">
+            <input type="search" placeholder="Search">
+            <img src="{{ url_for('static', filename='images/search.png') }}" alt="search-icon">
+        </div>
+    </section>
+    <section class="table__body">
+        <table>
+            <thead>
+                <tr>
+                    <th class="name"> Name <span class="icon-arrow">&UpArrow;</span></th>
+                    <th class="number"> Number <span class="icon-arrow">&UpArrow;</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contacts %}
+                <tr>
+                    <td class="name"> {{ contact[0] }} </td>
+                    <td class="number"> {{ contact[1] }} </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</main>
+{% else %}
+<p id="no-contact">No Contacts!</p>
+<a id="add">Add</a>
+{% endif %}
+{% endblock %}

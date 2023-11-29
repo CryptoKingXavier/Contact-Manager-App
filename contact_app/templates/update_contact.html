@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <section id="update_contact">
+        <h2>Update Contact</h2>
+        <form action="{{ url_for('main.update') }}" method="post">
+            <input type="text" name="contact_name" placeholder="Old Contact Name" required autocapitalize="words">
+            <input type="text" name="new_name" placeholder="New Contact Name" required autocapitalize="words">
+            <input type="text" name="new_number" placeholder="New Contact Number" required>
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button type="submit">♻️</button>
+            <a href="{{ url_for('main.contacts') }}">⬅️</a>
+        </form>
+    </section>
+{% endblock %}
